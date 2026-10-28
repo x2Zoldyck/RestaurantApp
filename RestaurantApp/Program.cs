@@ -1,8 +1,6 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RestaurantApp
 {
@@ -12,6 +10,35 @@ namespace RestaurantApp
         {
             Console.WriteLine("Hello master!");
             Console.WriteLine("Week2");
+            Console.WriteLine();
+
+            List<Restaurant> restaurants = new List<Restaurant>
+            {
+                new Restaurant(1, "Quanjude Roast Duck", "Beijing Cuisine", 4.5),
+                new Restaurant(2, "Donglaishun Hot Pot", "Hot Pot", 4.6),
+                new Restaurant(3, "Din Tai Fung", "Taiwanese Cuisine", 4.7)
+            };
+
+            Console.WriteLine("=== Restaurant List ===");
+            Console.WriteLine(
+                "{0,-5} {1,-25} {2,-22} {3,-10}",
+                "ID", "Name", "Type", "Rating");
+
+            Console.WriteLine(new string('-', 65));
+
+            foreach (Restaurant restaurant in restaurants)
+            {
+                Console.WriteLine(
+                    "{0,-5} {1,-25} {2,-22} {3,-10:F1}",
+                    restaurant.Id,
+                    restaurant.Name,
+                    restaurant.Type,
+                    restaurant.Rating);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Total restaurants: " + restaurants.Count);
+            Console.ReadKey();
         }
     }
 
