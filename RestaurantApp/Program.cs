@@ -10,7 +10,8 @@ namespace RestaurantApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Raphael assistant injecting");
+            Console.WriteLine("Hello master!");
+            Console.WriteLine("Week2");
         }
     }
 }
