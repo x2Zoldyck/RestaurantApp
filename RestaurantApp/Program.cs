@@ -21,13 +21,13 @@ namespace RestaurantApp
                 new Restaurant(5, "Haidilao Hot Pot", "Hot Pot", 4.8)
             };
 
-            Console.WriteLine("=== Restaurant List ===");
+            Console.WriteLine("======================== Restaurant List ========================");
             Console.WriteLine(
                 "{0,-5} {1,-25} {2,-22} {3,-10}",
                 "ID", "Name", "Type", "Rating");
 
             Console.WriteLine(new string('-', 65));
-
+            double averageRating = 0;
             foreach (Restaurant restaurant in restaurants)
             {
                 Console.WriteLine(
@@ -37,18 +37,10 @@ namespace RestaurantApp
                     restaurant.Type,
                     restaurant.Rating
                 );
-               
-
-                
-            }
-            double averageRating = 0;
-
-            foreach (Restaurant restaurant in restaurants)
-            {
                 averageRating += restaurant.Rating;
+
             }
             averageRating /= restaurants.Count;
-
             Console.WriteLine();
             Console.WriteLine("Average rating: " + averageRating.ToString("F1"));
             Console.WriteLine("Total restaurants: " + restaurants.Count);
